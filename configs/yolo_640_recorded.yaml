@@ -1,4 +1,4 @@
-# Recorded settings, not proof of exact historical replay. Adjust batch/workers for your machine.
+# Reference settings; batch and worker counts require adaptation to local hardware.
 model: yolo11s-pose.pt
 task: pose
 epochs: 100

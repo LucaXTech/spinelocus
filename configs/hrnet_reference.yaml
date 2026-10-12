@@ -1,4 +1,4 @@
-# Legacy architecture/decoding; preprocessing and loss are cleaned up, so exact replay is not claimed.
+# Reference compatibility settings; the coordinate decoder differs from newer configurations.
 model_name: hrnet_w18
 feature_index: 3
 pretrained: true

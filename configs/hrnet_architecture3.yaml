@@ -1,5 +1,5 @@
 # Architecture comparison: identical to hrnet_v2 except feature_index 3.
-# Generic ImageNet initialization; does not use the historical dataset-trained checkpoint.
+# Generic ImageNet initialization; no task-specific checkpoint is used to initialize training.
 model_name: hrnet_w18
 feature_index: 3
 pretrained: true
