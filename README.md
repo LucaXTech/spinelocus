@@ -10,6 +10,12 @@ The recovered historical dataset split reused COPDGene subjects across train, va
 
 On a repeatedly inspected validation set of **750 images from 15 subjects**, the fixed YOLO960 + two HRNet feature1 models with HRNet flip TTA and an identity guard gave **82.31% mean subject PCK@5**, **6.424 px mean error**, and **36.452 px P95** across the 11 landmarks. An exploratory two-view YOLO flip variant gave 82.86%, 6.126 px, and 34.201 px respectively. Its paired subject bootstrap interval for the PCK@5 gain was **−0.29 to +1.23 percentage points**, and the gain in mean error was **−0.045 to +0.553 px**. The intervals include zero. The no-flip method remains the primary validation baseline; no outcome from a final test is claimed here. Neither model weights nor the image dataset are distributed.
 
+## Pipeline overview
+
+![SpineLocus two-stage pipeline](docs/figures/pipeline_overview.png)
+
+*AI-generated conceptual illustration of the YOLO-Pose detection and HRNet refinement pipeline. The depicted anatomy, coordinates and heatmaps are illustrative, not actual model predictions or validation evidence. Optional ensembles, test-time augmentation and identity safeguards are omitted for clarity.*
+
 ## Install and check
 
 Use a separate Python 3.12 environment. On Windows with a compatible NVIDIA driver:
