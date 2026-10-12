@@ -1,11 +1,13 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite this repository."
+message: "If you use this version of the software, please cite its Zenodo DOI."
 type: software
 title: "SpineLocus: YOLO-Pose and HRNet for thoracic DRR landmarks"
 authors:
   - family-names: Serioli
     given-names: Luca
 version: 0.1.7
+doi: 10.5281/zenodo.23325290
+date-released: 2026-10-12
 license: AGPL-3.0-only
 abstract: "Independent Python research software for subject-disjoint thoracic vertebral landmark localization with YOLO-Pose and HRNet refinement. Research use only."
 repository-code: https://github.com/LucaXTech/spinelocus

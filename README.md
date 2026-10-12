@@ -1,5 +1,7 @@
 # SpineLocus
 
+[![Zenodo DOI — v0.1.7](https://zenodo.org/badge/DOI/10.5281/zenodo.23325290.svg)](https://zenodo.org/records/23325290)
+
 **Research software only; not validated for clinical use.**
 
 Research code for locating T1–T11 thoracic landmarks in digitally reconstructed radiographs (DRRs) with YOLO-Pose and optional HRNet refinement. It includes dataset checks, subject-level splitting, training, full-image evaluation, coordinate ensembles, and diagnostic audits. Windows and Linux with NVIDIA GPUs are supported; CPU-only tests cover the data and evaluation logic.
@@ -62,4 +64,4 @@ Results depend on the dataset, source manifest, checkpoint hashes, and configure
 
 **SpineLocus is an independently implemented Python research-software project authored and maintained by Luca Serioli.** Software authorship is recorded in [CITATION.cff](CITATION.cff) and [pyproject.toml](pyproject.toml). The repository provides implementation, configurations, synthetic tests and evaluation tools; it does **not** distribute CT volumes, DRRs, annotations, participant records, trained checkpoints or private research files.
 
-The source code is released under [AGPL-3.0-only](LICENSE). Third-party software and methods retain their own rights and attribution; see [third-party notices](THIRD_PARTY_NOTICES.md). Access to an imaging dataset, or possession of derived images, does not itself grant permission to redistribute it. The illustrative figure has a [separate provenance statement](docs/figures/PROVENANCE.md). See [release notes](docs/releases/v0.1.7.md) for the documentation-only update.
+The source code is released under [AGPL-3.0-only](LICENSE). Third-party software and methods retain their own rights and attribution; see [third-party notices](THIRD_PARTY_NOTICES.md). Access to an imaging dataset, or possession of derived images, does not itself grant permission to redistribute it. The illustrative figure has a [separate provenance statement](docs/figures/PROVENANCE.md). The [v0.1.7 source release is archived on Zenodo](https://zenodo.org/records/23325290) under DOI [`10.5281/zenodo.23325290`](https://doi.org/10.5281/zenodo.23325290). This DOI identifies the specific v0.1.7 archive; future versions may receive separate DOIs.
