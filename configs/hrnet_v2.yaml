@@ -1,0 +1,26 @@
+# Candidate, not a validated improvement. Finest exposed HRNet branch and consistent pixel centers.
+model_name: hrnet_w18
+feature_index: 1
+pretrained: true
+crop_size: 160
+heatmap_size: 64
+coordinate_convention: pixel_centers
+sigma: 1.5
+temperature_ce: 0.5
+temperature_decode: 0.35
+lambda_l1: 0.01
+epochs: 60
+batch_size: 16
+accumulate: 2
+workers: 0
+lr: 0.0003
+weight_decay: 0.0001
+grad_clip: 5.0
+seed: 42
+deterministic: true
+amp: true
+patience: 15
+translate_fraction: 0.25
+scale_range: [0.9, 1.4]
+validation_jitter: 0.10
+horizontal_flip: 0.5

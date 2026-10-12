@@ -1,0 +1,27 @@
+accumulate: 1
+amp: true
+batch_size: 16
+coordinate_convention: pixel_centers
+crop_size: 160
+deterministic: true
+epochs: 60
+feature_index: 1
+grad_clip: 5.0
+heatmap_size: 64
+horizontal_flip: 0.5
+lambda_l1: 0.01
+lr: 0.0003
+model_name: hrnet_w18
+patience: 15
+pretrained: true
+scale_range:
+- 0.9
+- 1.4
+seed: 42
+sigma: 1.5
+temperature_ce: 0.5
+temperature_decode: 0.35
+translate_fraction: 0.25
+validation_jitter: 0.1
+weight_decay: 0.0001
+workers: 0
