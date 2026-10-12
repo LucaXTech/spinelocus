@@ -16,7 +16,7 @@ On a repeatedly inspected validation set of **750 images from 15 subjects**, the
 
 ![SpineLocus two-stage pipeline](docs/figures/pipeline_overview.png)
 
-*AI-assisted conceptual illustration of YOLO-Pose detection and HRNet refinement. Depicted anatomy, coordinates and heatmaps are illustrative, not experimental predictions or validation evidence. Optional ensembles, test-time augmentation and identity safeguards are omitted for clarity. See [figure provenance and reuse status](docs/figures/PROVENANCE.md).*
+*Pipeline concept and reference diagram by Luca Serioli; AI-assisted illustrative rendering. Depicted anatomy, coordinates and heatmaps are schematic, not experimental predictions or validation evidence. Optional ensembles, test-time augmentation and identity safeguards are omitted for clarity. See [figure provenance](docs/figures/PROVENANCE.md).*
 
 ## Install and check
 
