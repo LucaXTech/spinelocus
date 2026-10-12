@@ -4,9 +4,11 @@
 
 Research code for locating T1–T11 thoracic landmarks in digitally reconstructed radiographs (DRRs) with YOLO-Pose and optional HRNet refinement. It includes dataset checks, subject-level splitting, training, full-image evaluation, coordinate ensembles, and diagnostic audits. Windows and Linux with NVIDIA GPUs are supported; CPU-only tests cover the data and evaluation logic.
 
-## Research status
+## Research status and dataset integrity
 
-The recovered historical dataset split reused COPDGene subjects across train, validation, and test. Those historical results cannot establish performance on unseen subjects. The current workflow creates a new subject-disjoint split and retrains models from generic pretrained weights. Dataset access and permissions remain with the dataset holder.
+SpineLocus implements subject-disjoint training, validation and test partitions. Model training for the reported experiments starts from generic pretrained weights rather than checkpoints trained on overlapping study subjects. Earlier overlapping-subject evaluations are **not** used as evidence of generalization.
+
+An aggregate, filename-based audit of the local DRR collection counted **4,553 JPEG images across 80 subject identifiers**. The curated experiment subset comprises **3,362 images from 74 subjects**, partitioned into **2,022 training images (44 subjects), 750 validation images (15 subjects) and 590 held-out test images (15 subjects)**. Every selected image basename was found in the source DRR collection; there were **zero duplicate image basenames and zero subjects shared between partitions**. Selection targeted a consistent T1–T11 task, with additional anatomical levels not uniformly represented across subjects. This audit does **not** establish pixel-level identity, original CT provenance, redistribution rights or independent test-set performance. See [data provenance and audit boundaries](docs/DATA_PROVENANCE.md).
 
 On a repeatedly inspected validation set of **750 images from 15 subjects**, the fixed YOLO960 + two HRNet feature1 models with HRNet flip TTA and an identity guard gave **82.31% mean subject PCK@5**, **6.424 px mean error**, and **36.452 px P95** across the 11 landmarks. An exploratory two-view YOLO flip variant gave 82.86%, 6.126 px, and 34.201 px respectively. Its paired subject bootstrap interval for the PCK@5 gain was **−0.29 to +1.23 percentage points**, and the gain in mean error was **−0.045 to +0.553 px**. The intervals include zero. The no-flip method remains the primary validation baseline; no outcome from a final test is claimed here. Neither model weights nor the image dataset are distributed.
 
@@ -14,7 +16,7 @@ On a repeatedly inspected validation set of **750 images from 15 subjects**, the
 
 ![SpineLocus two-stage pipeline](docs/figures/pipeline_overview.png)
 
-*AI-generated conceptual illustration of the YOLO-Pose detection and HRNet refinement pipeline. The depicted anatomy, coordinates and heatmaps are illustrative, not actual model predictions or validation evidence. Optional ensembles, test-time augmentation and identity safeguards are omitted for clarity.*
+*AI-assisted conceptual illustration of YOLO-Pose detection and HRNet refinement. Depicted anatomy, coordinates and heatmaps are illustrative, not experimental predictions or validation evidence. Optional ensembles, test-time augmentation and identity safeguards are omitted for clarity. See [figure provenance and reuse status](docs/figures/PROVENANCE.md).*
 
 ## Install and check
 
@@ -56,6 +58,8 @@ The exploratory variant adds `--yolo-flip-tta` and writes to a **new** output di
 
 Results depend on the dataset, source manifest, checkpoint hashes, and configured protocol. The reported validation population was used during method development and cannot provide an independent generalization estimate.
 
-## Distribution and attribution
+## Software authorship, distribution and citation
 
-This public candidate contains implementation, configurations, and synthetic tests. It omits DRRs, labels, prediction rows, individual subject identifiers, research reports, model weights, supplied source notebooks. Original research and source materials were supplied by project collaborators; confirm the appropriate author credits and permission to release the reconstructed code before publishing. See [LICENSE](LICENSE) (AGPL-3.0), [third-party notices](THIRD_PARTY_NOTICES.md), and [software citation metadata](CITATION.cff). Scientific-study attribution is distinct from software authorship; add collaborators to citation metadata if they also contributed to the released software. Dependency and dataset terms are separate.
+**SpineLocus is an independently implemented Python research-software project authored and maintained by Luca Serioli.** Software authorship is recorded in [CITATION.cff](CITATION.cff) and [pyproject.toml](pyproject.toml). The repository provides implementation, configurations, synthetic tests and evaluation tools; it does **not** distribute CT volumes, DRRs, annotations, participant records, trained checkpoints or private research files.
+
+The source code is released under [AGPL-3.0-only](LICENSE). Third-party software and methods retain their own rights and attribution; see [third-party notices](THIRD_PARTY_NOTICES.md). Access to an imaging dataset, or possession of derived images, does not itself grant permission to redistribute it. The illustrative figure has a [separate provenance statement](docs/figures/PROVENANCE.md). See [release notes](docs/releases/v0.1.7.md) for the documentation-only update.

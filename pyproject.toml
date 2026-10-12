@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "spinelocus"
-version = "0.1.6"
+version = "0.1.7"
 authors = [{name = "Luca Serioli"}]
 license = "AGPL-3.0-only"
 description = "Reproducible YOLO-Pose and HRNet refinement for thoracic DRR landmarks"
