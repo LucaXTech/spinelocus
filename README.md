@@ -1,6 +1,6 @@
 # SpineLocus
 
-[![Zenodo DOI — v0.1.7](https://zenodo.org/badge/DOI/10.5281/zenodo.23325290.svg)](https://zenodo.org/records/23325290)
+**Archived release v0.1.7 — [DOI: 10.5281/zenodo.23325290](https://doi.org/10.5281/zenodo.23325290)**
 
 **Research software only; not validated for clinical use.**
 
